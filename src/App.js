@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import socialMediaAuth from './services/auth';
+import './config/firebase-config';
 import {
   facebookProvider,
   githubProvider,
