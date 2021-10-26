@@ -1,9 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import socialMediaAuth from './services/auth';
+import {
+  facebookProvider,
+  githubProvider,
+  googleProvider,
+} from './config/authMethods';
 
 function App() {
+  const handleOnClick = async (provider) => {
+    const result = await socialMediaAuth(provider);
+    console.log(result);
+  };
   return (
     <div className="App">
+      <button onClick={() => handleOnClick(facebookProvider)}>Facebook</button>
+      <button onClick={() => handleOnClick(githubProvider)}>Github</button>
+      <button onClick={() => handleOnClick(googleProvider)}>Google</button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
